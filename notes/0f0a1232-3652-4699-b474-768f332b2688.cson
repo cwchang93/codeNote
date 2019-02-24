@@ -1,0 +1,40 @@
+createdAt: "2019-02-10T02:04:16.963Z"
+updatedAt: "2019-02-10T02:57:57.998Z"
+type: "MARKDOWN_NOTE"
+folder: "3befc5cda15e53f87263"
+title: "Points"
+tags: [
+  "hahow"
+  "HTML"
+  "CSS"
+  "JS"
+]
+content: '''
+  #### Points
+  > 1. 網頁開發需減少使用圖片，改用canvas, svg代替。因為圖片會讓效能變差
+  > 2. 智邦 => 其中一間伺服器供應商
+  > 
+  
+  
+  
+  
+  
+  > 10 伺服器, url概念講解
+  > 
+  
+  
+  #### CodePen
+  > 1. Forked: 把別人的project copy 一份變成自己的
+  > 2. 愛心：加入到我的最愛中
+  > 
+  
+  #### CodePen HotKey
+  > 1. 調整setting改成sublime text
+  > 2. "ctrl + ["   deindent
+  > 3. "ctrl + D" 選同樣的詞語
+  > 
+  
+  
+'''
+isStarred: false
+isTrashed: false

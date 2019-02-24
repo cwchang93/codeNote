@@ -1,0 +1,73 @@
+createdAt: "2019-02-06T11:34:04.895Z"
+updatedAt: "2019-02-06T11:34:56.294Z"
+type: "SNIPPET_NOTE"
+folder: "4edb77157485c1f3d23c"
+title: "7-5 Salary Counter"
+tags: [
+  "salarycounter"
+]
+description: '''
+  7-5 Salary Counter
+  
+'''
+snippets: [
+  {
+    name: "salary.js"
+    mode: "JavaScript"
+    content: '''
+      import React, { Component } from "react";
+      class Salary extends Component {
+        state = {
+          month: 0,
+          startTime: Date.now(),
+          currentTime: Date.now()
+        };
+      
+        componentDidMount() {
+          setInterval(() => {
+            this.setState({
+              currentTime: Date.now()
+            });
+          }, 100);
+        }
+      
+        onChangeMonth = e => {
+          this.setState({
+            month: e.target.value
+          });
+        };
+      
+        render() {
+          const { month, currentTime, startTime } = this.state;
+          const timeSpan = (currentTime - startTime) / 1000;
+          // console.log(timeSpan);
+          return (
+            <div>
+              <label>月薪</label>
+              <input type="number" value={month} onChange={this.onChangeMonth} />
+              <br />
+              <label>時薪</label>
+              <input type="number" value={month / 240} />
+              <br />
+              <label>分薪</label>
+              <input type="number" value={month / 240 / 60} />
+              <br />
+              <label>經過時間</label>
+              <input type="number" value={`${timeSpan.toFixed(1)}`} />
+              <label>秒薪</label>
+              <input
+                type="number"
+                value={((month / 240 / 60 / 60) * timeSpan).toFixed(2)}
+              />
+            </div>
+          );
+        }
+      }
+      
+      export default Salary;
+      
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

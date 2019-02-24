@@ -1,0 +1,62 @@
+createdAt: "2019-02-05T23:35:49.815Z"
+updatedAt: "2019-02-05T23:58:44.253Z"
+type: "SNIPPET_NOTE"
+folder: "733bab8b96a9899e94d0"
+title: "arrayMethod"
+tags: [
+  "map"
+  "filter"
+  "reduce"
+]
+description: "arrayMethod"
+snippets: [
+  {
+    name: "arrayMethod.js"
+    mode: "JavaScript"
+    content: '''
+      const array = [1,2,3];
+      
+      // map
+      const result = array( (ele, i, arr)=> {
+        <li>{ele<}</li>
+      })
+      
+      //filter
+      const result = array.filter((ele, i, arr) => {
+        return ele % === 0;
+      })
+      
+      
+      // MDN reduce 
+      // https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+      
+      // reduce 取總和 吃兩個參數(1.函式(吃4個參數acc, ele, i, arr) 2.初始值)
+      const result = array.reduce ( ()=> {
+        return acc + ele
+      }, 0)
+      
+      // PS acc 為accumulator
+      
+      // 以上三種方法不會改變原本的array
+      
+      // 以下會改變原本的array
+      const array = [1,2,3,4]
+      
+      array.pop(); //4
+      array.push(5); //5
+      array.shift();
+      array.unshift(0);  //回傳陣列的新長度
+      
+      array.reverse();
+      array.slice();
+      array.sort();
+      
+      // 複製新array
+      const newArr2 = [...array];
+      
+      
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

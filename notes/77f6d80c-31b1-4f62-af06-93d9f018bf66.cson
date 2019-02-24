@@ -1,0 +1,18 @@
+createdAt: "2019-02-03T01:36:14.180Z"
+updatedAt: "2019-02-04T01:53:47.213Z"
+type: "MARKDOWN_NOTE"
+folder: "733bab8b96a9899e94d0"
+title: "03 JS Arrow Function"
+tags: [
+  "arrowFunction"
+]
+content: '''
+  ### 03 JS Arrow Function
+  - arrow function中的this沒有自己的情境(context)。他的this指向會根據外層宣告的環境而決定。
+  
+  - 如果在global宣告，則this會指向global，如果包在obj中，而obj是在global環境下宣告，則this會指向global
+  
+  
+'''
+isStarred: false
+isTrashed: false

@@ -1,0 +1,40 @@
+createdAt: "2019-01-27T04:04:34.579Z"
+updatedAt: "2019-02-04T01:52:33.917Z"
+type: "MARKDOWN_NOTE"
+folder: "733bab8b96a9899e94d0"
+title: "02 JS ES6 String"
+tags: [
+  "ES6String"
+]
+content: '''
+  ### 02 JS ES6 String
+  
+  let firstName = 'john';
+  let lastName = 'Smith';
+  const yearOfBirth = 1990;
+  
+  function calcAge(year) {
+   &nbsp; return 2016 - year;
+  }
+  
+  #### ES5 需要慢慢加
+  
+  >console.log( 'This is ' + firstName + ' ' + lastName + ' ' + calcAge(yearOfBirth)+ ' years old')
+  
+  
+  #### ES6 使用`` 及$可以把變數與文字混在一起 
+  >console.log(\\`This is ${firstName} ${lastName} ${calcAge(yearOfBirth)}`)
+  
+  ### String Methods
+  >
+  const n = `${firstName} ${lastName}`;
+  console.log(n.startsWith('j'));
+  console.log(n.endsWith('sm'));
+  console.log(n.includes('oh'));
+  console.log(firstName.repeat(5));
+  console.log(\\`${firstName} `.repeat(3));
+  
+  如果用大括弧＝>外面要加``  否則會報錯
+'''
+isStarred: false
+isTrashed: false

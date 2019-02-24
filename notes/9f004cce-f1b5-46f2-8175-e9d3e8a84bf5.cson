@@ -1,0 +1,45 @@
+createdAt: "2019-02-05T00:40:09.378Z"
+updatedAt: "2019-02-05T01:05:46.927Z"
+type: "MARKDOWN_NOTE"
+folder: "4edb77157485c1f3d23c"
+title: "Ref 找DOM"
+tags: [
+  "ref"
+  "DOM"
+]
+content: '''
+  ### Ref 找DOM 
+  #### 1. 字串方法
+  > componentDidMount() {
+  &nbsp;  this.refs.myInput.focus( );
+  }
+  >
+  > < input type="text" ref="myInput">
+  
+  #### 2. 函式傳入
+  >setRef = (input) => {
+  &nbsp; input.focus();
+  }
+  >
+  >// 這邊的input就是下面的DOM
+  >// 可用 console.log(input) 理解
+  >< input type="text" ref={this.setRef} />
+  
+  
+  #### 3. createRef
+  >import {createRef} from "react"
+  > 
+  > myInput = createRef();
+  > 
+  > componentDidMount() {
+  > &nbsp; this.myInput.current.focus()
+  >&nbsp;}
+  >
+  > PS 這邊不能直接用 createRef().current.focus();
+  > 
+  >< input type="text" ref={this.myInput} />
+  >
+  >
+'''
+isStarred: false
+isTrashed: false

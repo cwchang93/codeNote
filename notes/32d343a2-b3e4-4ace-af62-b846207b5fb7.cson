@@ -1,0 +1,48 @@
+createdAt: "2019-02-03T01:10:24.072Z"
+updatedAt: "2019-02-05T14:08:17.371Z"
+type: "MARKDOWN_NOTE"
+folder: "4edb77157485c1f3d23c"
+title: "React HiSKIO"
+tags: []
+content: '''
+  #### React HiSKIO
+  - 當使用點擊事件時要注意this的指向
+  > 詳見React thisSol.js
+  
+  
+  > ### 安裝React extension
+  > 1. react code snippet
+  
+  > ### A. React Concept 
+  > 1. 一開始React啟動時會尋找index.js檔案並Render
+  > 2. import react 是核心
+  > 3. reactDom是將react 掛載到dom上
+  > 4. List 是組件  < List/> 元素
+  > 5. 生命週期的this一定是指該class組件
+  > 6. 一般函式的this不一定是只class組件，加箭頭函示就一定會是class組件
+  
+  > 7. react的index.js中的Render可以寫成
+  > import {render} from 'react-dom';
+  > render (<componentName/>, document.getElementById('root'));
+  
+  >### B. 生命週期
+  >constructor() { }
+  >
+  >componentDidMount() { }
+  >
+  >componentDidUpdate(prev,Props, prevState) { }
+  >
+  >render() { }
+  
+  > ### C. 靜態
+  > 靜態屬性 static propTypes
+  > 靜態方法 static method
+  > ### 定義屬性也可在組件宣告完後在組件外定義
+  > 組件名.propType = { }
+  
+  > React Key
+  > 為何要用key: 讓react去辨別unique資料,並避免重新render
+  > 避免使用index當key：因為對於效能沒任何幫助，一樣會重新render，單純只有避免warning
+'''
+isStarred: false
+isTrashed: false

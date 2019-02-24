@@ -1,0 +1,122 @@
+createdAt: "2019-01-27T02:36:42.446Z"
+updatedAt: "2019-02-04T02:56:36.007Z"
+type: "MARKDOWN_NOTE"
+folder: "733bab8b96a9899e94d0"
+title: "01 JS ES6 Basics"
+tags: [
+  "ES6"
+  "Javascript"
+]
+content: '''
+  ### 01 JS ES6 Basics
+  
+  #### 1. JS Block scope & function scope
+  - block scope會找大括弧 { } 來作為區域的分界  PS.物件的大括號不算
+  - function scope 會以function為範圍作為區域分界
+  
+  > #### 
+  > function print1() {
+  &nbsp;     if (true) {
+  &nbsp; &nbsp; &nbsp;     let something = '123'
+  &nbsp; &nbsp; &nbsp; &nbsp;console.log(something);
+  &nbsp;   }
+  }
+  // 123
+  
+  > #### 
+  > function print2() {
+  > &nbsp; &nbsp; &nbsp;     let something = '123'
+  &nbsp;     if (true) {
+  &nbsp; &nbsp; &nbsp; &nbsp;console.log(something);
+  &nbsp;   }
+  }
+  // undefined
+  // 因為let 屬於funcsion print2的scope，不屬於if的scope中
+  
+  
+  
+  
+  #### 2. var 與let const的區別
+  
+  ##### 作用範圍
+  - var: scope
+  - let/const: block
+  - scope: function/global
+  
+  - let 可以只宣告名稱不宣告變數
+  - const 宣告時連值也要一起宣告
+  -- 否則會報錯 
+  >const greeting; 
+  >Uncaught SyntaxError: Missing initializer in const declaration
+  
+  
+  - const 無法reassign 但可以改變物件的值
+  > const x = { a:1, b:2 }
+  x.a = 2
+  x &nbsp; &nbsp;   // { a:2, b:2 }
+  
+  > #### Q1：下列會印出？
+  >let i = 23; <br>
+  for (let i = 0; i < 5; i++) { 
+   &nbsp; console.log(i);
+  }
+  console.log(i);
+  
+  
+  > #### Q2：下列會印出？
+  >var i = 23;
+  for (var i = 0; i < 5; i++) {
+  &nbsp;   console.log(i);
+  }
+  console.log(i);
+  
+  > #### Q3: 以下會印出？
+  > var x = 1;
+  { 
+  &nbsp;  var x =2;
+  &nbsp;  console.log (x);
+  }
+  console.log(x); 
+  
+  #### 3. IIFES 
+  
+  >ES5 IIFES
+  > (function() {
+    &nbsp;&nbsp;&nbsp; var c = 3
+  } )( )
+  console.log( c ); // 3
+  
+  
+  > ES6 IIFES
+  > {
+   &nbsp;   &nbsp; const a = 1;
+    &nbsp; &nbsp;   let b = 2;
+  }
+  console.log( a + b);
+  // Uncaught ReferenceError
+  
+  
+  #### 4. export, import
+  ##### math.js
+  > // export default
+  const math = {
+  &nbsp;  double: x => x*2,
+  &nbsp;  square: x => x*x
+  }
+  // named export 
+  export const PI = 3.14;
+  export default math;
+  
+  
+  #### main.js 
+  >import { PI } from './math'  
+  // .js省略
+  // named export 要加大括號
+  // 這邊的PI 需要用原本定義的名字，或是改成 as
+  import { PI as P}
+  > #### 兩者混用
+  >import math, { P as PI} from './math'
+  
+'''
+isStarred: false
+isTrashed: false

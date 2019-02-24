@@ -1,0 +1,126 @@
+createdAt: "2019-02-07T00:54:53.713Z"
+updatedAt: "2019-02-08T00:59:19.223Z"
+type: "SNIPPET_NOTE"
+folder: "4edb77157485c1f3d23c"
+title: "reactLifeCycle"
+tags: [
+  "react"
+  "lifeCycle"
+]
+description: '''
+  reactLifeCycle
+  1. Constructor
+  2. 
+'''
+snippets: [
+  {
+    name: "reactLifeCycle.js"
+    mode: "JavaScript"
+    content: '''
+      A. Constructor
+      
+      constructor(props) {
+        super(props);
+        this.state = ({
+          count:0,
+        })
+        // constructor主要目的為制定state與綁定事件
+        // this.handleClick = this.handleClick.bind(this)
+      }
+      
+      // Constructor函式不能做的事
+      1. 不要setState
+      2. 不要直接指定props的屬性到this.state
+          this.state = {
+            count: props.count,
+          }
+      ＝> 除非只要更新第一次有效
+      3. 不要用ajax: 不要取得資料、上傳資料(fetch)
+      
+      
+      B. render 把資料轉成視覺畫面(或在裡面處理props資料)
+      // 讀取this.props this.state
+      // return JSX 
+      // 16版 之後可以回傳 array false null
+      // render不能
+      1. this.setState()
+      2. ajax  (fetch, axios)
+      
+      
+      C. componentDidMount() 初見
+        第一次render完會執行componentDidMount();
+      
+        state = {
+          items: [],
+        }
+      
+      componentDidMount(){
+         fetch('url')
+        .then((response) => response.json())
+        .then(data => {
+          this.setState({
+            item: data,
+          })
+        })   
+       }
+      
+      --> async 
+      componentDidMount(){
+        this.fetchList()
+      }
+      
+       fetchList = async () => {
+         const response = await fetch('url')
+         const data = await response.json()
+         this.setState({
+           items: data,
+         })
+       }
+      
+      D. componentDidUpdate(prevProps,preState, snapshot)
+      當props或state有變動更新時，會呼叫的生命週期函式
+      //VIP: 需加入condition確認才行，否則會一直更新
+      
+      componentDidUpdate(prevProps,preState, snapshot) {
+        
+      if (prevProps.userID !== this.props.userID) {
+        this.fetchUser(this.props.userID);
+        this.setState({
+          
+        });
+      }
+      }
+      E. componentWillUnmount()  再見
+      在使用者離開頁面時（組件消失時）會call的function
+      用途
+      1. 移除eventListener
+      2. 移除timer
+      3. 移除ajax
+      
+      componentDidMount() {
+        window.addEventLisener('scroll', this.onScroll)
+      }
+      
+      componentDidUpdate(prevProps, prevState) {
+        this.timer = setTimeout(() => this.update(), 3000)
+      }
+      
+      componentWillUnmount() {
+        window.removeEventListener('scroll',this.onScroll )
+        clearTimeour(this.timer);
+        
+      }
+      
+      onScroll = () => {
+        // ...
+      };
+      
+      update = () => {
+        
+      }
+      
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

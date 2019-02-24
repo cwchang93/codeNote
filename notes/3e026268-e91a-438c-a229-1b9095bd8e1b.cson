@@ -1,0 +1,106 @@
+createdAt: "2019-02-06T12:13:29.767Z"
+updatedAt: "2019-02-08T02:55:37.108Z"
+type: "SNIPPET_NOTE"
+folder: "4edb77157485c1f3d23c"
+title: "ReactQuestion: 一個function中setState無法在該function直接print出setState完的狀態。需要另外寫function才能console出來"
+tags: []
+description: "ReactQuestion: 一個function中setState無法在該function直接print出setState完的狀態。需要另外寫function才能console出來"
+snippets: [
+  {
+    name: "question1.js"
+    mode: "JavaScript"
+    content: '''
+      import React, { Component, createRef } from "react";
+      class ChatRoom extends Component {
+        myInput = createRef();
+        state = {
+          text: "",
+          context: []
+        };
+      
+        componentDidMount() {
+          // this.setRef();
+          this.myInput.current.focus();
+        }
+      
+        //   setRef = input => {
+        //     input.focus();
+        //   };
+      
+        onChange = e => {
+          this.setState({
+            text: e.target.value
+          });
+        };
+      
+        submit = c => {
+          const { context, text } = this.state;
+          console.log("context");
+          console.log(context);
+          this.setState(
+            {
+              text: "",
+              context: [text, ...context]
+            },
+            () => {
+              // console.log("newContext", context);
+              // Q: setState後無法馬上print出東西，需要另外寫function來console目前state的東西
+              this.printContext();
+            }
+          );
+        };
+      
+        printContext() {
+          console.log("context in print");
+          console.log(this.state.context);
+        }
+      
+        render() {
+          const { text, context } = this.state;
+          return (
+            <div>
+              <input value={text} onChange={this.onChange} ref={this.myInput} />
+              <button onClick={this.submit}>Submit</button>
+      
+              {context.map((ele, i) => {
+                return (
+                  <li key={`df${i}`}>
+                    {i + 1} : {ele}
+                  </li>
+                );
+              })}
+            </div>
+          );
+        }
+      }
+      
+      export default ChatRoom;
+      
+      // Q2: e.preventDefault
+      
+      
+      
+      // Q3: map用小括號可以取代return? 
+            <div>
+              {courses.map(course => (
+                <Course key={course.id} {...course} />
+              ))}
+              <hr />
+              {testArr.map((num, i) => (
+                <h6>{num}</h6>
+              ))}
+            </div>
+      
+      // Q4: 
+        {testArr.map((num, i) => (
+                <h6>{num}</h6>
+              ))}
+              <br />
+              {testArr.map(num => {
+                return <h6>{num}</h6>;
+              })}
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

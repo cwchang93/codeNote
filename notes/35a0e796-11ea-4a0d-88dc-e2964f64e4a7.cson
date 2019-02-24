@@ -1,0 +1,48 @@
+createdAt: "2019-02-03T01:42:58.014Z"
+updatedAt: "2019-02-03T01:55:33.152Z"
+type: "SNIPPET_NOTE"
+folder: "733bab8b96a9899e94d0"
+title: "arrow function, comparison btw ES5 & ES6;"
+tags: [
+  "arrowFunction"
+  "this"
+]
+description: '''
+  arrow function, comparison btw ES5 & ES6;
+  
+'''
+snippets: [
+  {
+    name: "arrowFunctionCode.js"
+    mode: "JavaScript"
+    content: '''
+      // ES 5
+      var ages5 = years.map(function(el) {
+        return 2018 - el;
+      });
+      
+      console.log('ES 5: ' + ages5);
+      
+      // ES6
+      let ages6 = years.map(el => 2018 - el);
+      console.log('ES6: ' + ages6);
+      
+      ages6 = years.map((el, index) => `Age element ${index + 1}
+      : ${2018 - el}.`);
+      console.log(ages6);
+      
+      ages6 = years.map((el,index) =>{
+          const now = new
+          Date().getFullYear();
+          const age = now -el;
+          return `Age element ${index +1}: ${age}.`
+      
+      });
+      console.log(ages6);
+      
+      ages6 = years.map
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

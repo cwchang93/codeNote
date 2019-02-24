@@ -1,0 +1,104 @@
+createdAt: "2019-02-10T02:58:03.015Z"
+updatedAt: "2019-02-10T07:47:15.263Z"
+type: "SNIPPET_NOTE"
+folder: "3befc5cda15e53f87263"
+title: ""
+tags: []
+description: ""
+snippets: [
+  {
+    name: "hahowBasic.js"
+    mode: "JavaScript"
+    content: '''
+      useful Link:
+      1. css color: color picker // http:colorpicker.com
+      2. 
+      
+      //<b> 加粗
+      <b> 與 <bold> 一樣
+      <b> 哈摟</b>
+      // <i> 斜體
+      
+      // <ol>  有排列清單 order list
+      // <li>  list
+      
+      <p> 
+        
+      
+      把列表變成一列：
+      display: inline-block;
+      .html
+      <ul>
+        <li>首頁 </li>
+        <li>個人檔案 </li>
+        <li>聯絡 </li>
+      </ul>
+      
+      .css
+      li {
+        display: inline-block;
+      }
+      
+      render=>
+      首頁 個人檔案 聯絡
+      
+      
+      <div> => 無特殊屬性的分隔
+      <span> => 不換行的分隔屬性
+      <br> => 換行
+      
+      CSS inline style: 
+      在tag中直接加入style="color: red;";
+      note: 要記得加入分號;
+      
+      display: 
+      1. inline: 只能更改左右，不能更改上下的(間距)
+      2. inline-block: 塊狀，可以更改上下左右的間距: 
+      3. block: 預設屬性，會撐滿整個版面(會換行)
+      
+      定位：
+      1. static: 自動排列
+      2. fixed: 固定位置
+      3. absolute: 絕對定位
+      4. relative: 相對定位
+      PS: 通常nav bar都是建立在fixed屬性上的
+      
+      
+      斷行與捲軸：
+      html 
+      <div> 
+        <p>hey there how are you doing man? I'm wondering if I have the opportunity to date with Peggy Tsai?</p> 
+      </div>
+        
+      css
+        p { 
+        position:relative; 
+        top:10px; 
+        left:10px; 
+        word-break:normal;
+      }
+      
+      css 邊界順序: 
+      四個值：上右下左
+      三個值：上 (左右) 下
+      兩個值： (上下)  (左右)
+      
+      margin: 外面的間距  
+      padding: 裡面文字與框線的間距
+      
+      CSS 字體屬性：
+      1. 字體種類: font-family
+      2. 字體大小: font-size
+      3. 字體顏色: color
+      4. 字體粗細: font-weight
+      5. 字體間距: letter-spacing
+      6. 字體行距: line-height
+      
+      
+      
+      
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

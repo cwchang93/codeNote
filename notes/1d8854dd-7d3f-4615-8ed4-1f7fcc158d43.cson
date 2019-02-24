@@ -1,0 +1,45 @@
+createdAt: "2019-02-04T10:01:48.698Z"
+updatedAt: "2019-02-04T10:12:30.276Z"
+type: "SNIPPET_NOTE"
+folder: "4edb77157485c1f3d23c"
+title: "State tips"
+tags: []
+description: "State tips"
+snippets: [
+  {
+    name: "stateTips.js"
+    mode: "JavaScript"
+    content: '''
+      // 要如何重複setState? 
+      // 1. 將arrow function加入setState中
+      
+        addValue = () => {
+          const { num, counter } = this.state;
+          this.setState(state => ({
+            counter: state.counter + 1
+          }));
+          this.setState(state => ({
+            counter: state.counter + 1
+          }));
+          this.setState(state => ({
+            counter: state.counter + 1
+          }));
+        };
+      
+      // 2. 運用callBack Function
+       addValue = () => {
+          const { num, counter } = this.state;
+          this.setState({
+            counter: state.counter 
+          }, ()=> {} 
+          );
+         
+        };
+      
+      // 注意：這邊要用arrow function, 否則this的指向會跑掉
+      
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

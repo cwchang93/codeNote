@@ -1,0 +1,49 @@
+createdAt: "2019-02-04T03:44:06.015Z"
+updatedAt: "2019-02-04T07:00:17.258Z"
+type: "MARKDOWN_NOTE"
+folder: "4edb77157485c1f3d23c"
+title: "01 npm & yarn command line"
+tags: []
+content: '''
+  ### 01 npm & yarn command line
+  
+  > #### install yarn
+  > npm install --global yarn
+  
+  > 
+  
+  > #### install package
+  > npm install
+  > npm i 
+  > yarn
+  > 
+  
+  > #### add package
+  > npm install --save react
+  > npm i -S react
+  > yarn add react
+  > 
+  
+  > #### add dev package
+  >  npm i -D react
+  >  yarn add -D react
+  >  
+  
+  > #### remove package
+  >npm remove --save react
+  npm r -S react
+  yarn remove react
+  
+  >#### add global package
+  >npm install --global nodemon
+  >npm i -g nodemon
+  >yarn global add nodemon
+  >
+  
+  > #### run script 
+  > npm run build
+  > yarn run build
+  > yarn build
+'''
+isStarred: false
+isTrashed: false

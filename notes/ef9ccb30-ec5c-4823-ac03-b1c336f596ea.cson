@@ -1,0 +1,122 @@
+createdAt: "2019-02-06T00:07:19.352Z"
+updatedAt: "2019-02-06T07:26:26.026Z"
+type: "SNIPPET_NOTE"
+folder: "4edb77157485c1f3d23c"
+title: "react e.target.value"
+tags: [
+  "表單綁定"
+  "input"
+  "onChange"
+]
+description: "react e.target.value"
+snippets: [
+  {
+    name: "input.js"
+    mode: "JavaScript"
+    content: '''
+      // function
+      onChange = e => {
+          console.log(e.target.value);
+          this.setState({
+            text: e.target.value
+          });
+        };
+      
+      // JSX
+      <input value={text} onChange={this.onChange} />
+              <p>{text}</p>
+      // PS 可用在input 或 textarea中
+      
+      
+      
+      // 表單單選多選綁定
+      import React, { Component } from "react";
+      class App extends Component {
+        state = {
+          gender: "",
+          like: {
+            male: false,
+            female: false
+          }
+        };
+      
+        onChangeGender = e => {
+          const { gender } = this.state;
+          console.log(e.target.value);
+          this.setState({
+            gender: e.target.value
+          });
+        };
+      
+        onChangeLike = e => {
+          const { like } = this.state;
+          const key = e.target.value;
+          this.setState({
+            like: {
+              // ...this.state.like, // 重新複製一份才能應用在多選中
+              [key]: !this.state.like[key]
+            }
+          });
+        };
+      
+        render() {
+          const { gender, like } = this.state;
+          console.log("like");
+          console.log(like);
+          return (
+            <div>
+              <div>
+                Your Gender:
+                <input
+                  type="radio"
+                  value="male"
+                  onChange={this.onChangeGender}
+                  checked={gender === "male"}
+                />
+                <label>Male</label>
+                <input
+                  type="radio"
+                  value="female"
+                  onChange={this.onChangeGender}
+                  checked={gender === "female"}
+                />
+                <label>Female</label>
+              </div>
+              <div>
+                You Like:
+                <input
+                  type="checkbox"
+                  value="male"
+                  onChange={this.onChangeLike}
+                  checked={like.male}
+                />
+                <label>Male</label>
+                <input
+                  type="checkbox"
+                  value="female"
+                  onChange={this.onChangeLike}
+                  checked={like.female}
+                />
+                <label>Female</label>
+              </div>
+              <pre>{JSON.stringify(this.state, null, 2)}</pre>
+            </div>
+          );
+        }
+      }
+      
+      export default App;
+      
+      // [JS的event.srcElement与event.target（触发事件对象） - 风雨后见彩虹 - 博客园](https://www.cnblogs.com/moqiutao/p/4912784.html)
+      // e.target.tagName
+      // e.target.value
+      // e.target.type
+      
+      
+      
+      
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

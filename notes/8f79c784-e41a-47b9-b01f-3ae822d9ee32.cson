@@ -1,0 +1,114 @@
+createdAt: "2019-02-04T03:37:29.911Z"
+updatedAt: "2019-02-04T08:05:44.583Z"
+type: "SNIPPET_NOTE"
+folder: "4edb77157485c1f3d23c"
+title: "thisSol.js"
+tags: [
+  "click"
+  "this"
+  "bind"
+]
+description: '''
+  thisSol.js
+  Click function 的this綁定要注意
+'''
+snippets: [
+  {
+    name: "thisSol.js"
+    mode: "JavaScript"
+    content: '''
+      // Sol 1 使用bind(this)  Line 21
+      class App extends Component {
+        state = {
+          counter: 1
+        };
+        addCounter() {
+          console.log(this);
+          this.setState({
+            counter: this.state.counter + 1
+          });
+        }
+        render() {
+          return (
+            <div className="App">
+              <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <h1>Hello World!</h1>
+                <h1>{this.state.counter}</h1>
+                <h1>{this.state.counter}</h1>
+                <h1>{this.state.counter}</h1>
+                <button onClick={this.addCounter.bind(this)}>addOne</button>
+              </header>
+            </div>
+          );
+        }
+      }
+      
+      // Sol 2 Use arrow function in the click function L34
+      
+      class App extends Component {
+        state = {
+          counter: 1
+        };
+        addCounter = () => {
+          console.log(this);
+          this.setState({
+            counter: this.state.counter + 1
+          });
+        };
+        render() {
+          return (
+            <div className="App">
+              <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <h1>Hello World!</h1>
+                <h1>{this.state.counter}</h1>
+                <h1>{this.state.counter}</h1>
+                <h1>{this.state.counter}</h1>
+                <button onClick={this.addCounter}>addOne</button>
+              </header>
+            </div>
+          );
+        }
+      }
+      
+      // Sol 3 Use constructor props
+      
+      class App extends Component {
+        state = {
+          counter: 1
+        };
+      
+        constructor(props) {
+          super(props);
+          
+          this.addCounter() = this.addCounter.bind(this);
+        }
+      
+        addCounter() {
+          console.log(this);
+          this.setState({
+            counter: this.state.counter + 1
+          });
+        };
+        render() {
+          return (
+            <div className="App">
+              <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <h1>Hello World!</h1>
+                <h1>{this.state.counter}</h1>
+                <h1>{this.state.counter}</h1>
+                <h1>{this.state.counter}</h1>
+                <button onClick={this.addCounter}>addOne</button>
+              </header>
+            </div>
+          );
+        }
+      }
+      
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

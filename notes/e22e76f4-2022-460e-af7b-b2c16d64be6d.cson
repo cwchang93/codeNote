@@ -1,0 +1,28 @@
+createdAt: "2019-02-05T09:04:39.582Z"
+updatedAt: "2019-02-05T09:15:35.526Z"
+type: "SNIPPET_NOTE"
+folder: "4edb77157485c1f3d23c"
+title: "React Component Type"
+tags: [
+  "componentType"
+  "Functional"
+  "classComponent"
+]
+description: "React Component Type"
+snippets: [
+  {
+    name: "reactComponent.js"
+    mode: "JavaScript"
+    content: '''
+      // [Functional vs Class-Components in React – David Jöch – Medium](https://medium.com/@Zwenza/functional-vs-class-components-in-react-231e3fbd7108)
+      
+      // 主要分為三個
+      // 1. classComponent: 
+      // 2. pureComponent: 會依照第一層的state與props有無改變來決定是否render(shallow compare)
+      // 3. functionalComponent: stateless functional component
+      //  -> 使用 functionalComponent不能用setState, 因為他只是單純的JS function
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

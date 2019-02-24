@@ -1,0 +1,124 @@
+createdAt: "2019-02-05T08:32:34.807Z"
+updatedAt: "2019-02-05T11:15:21.549Z"
+type: "SNIPPET_NOTE"
+folder: "4edb77157485c1f3d23c"
+title: "5-4ComponentCommunication"
+tags: [
+  "ref"
+  "props"
+  "parent"
+  "child"
+  "communication"
+]
+description: '''
+  5-4ComponentCommunication
+  
+'''
+snippets: [
+  {
+    name: "componentCommunication.js"
+    mode: "JavaScript"
+    content: '''
+      // 1. 父操控子 => ref   子操控父 => props來call父的function
+      // Parent.js
+      import React, { Component, createRef } from "react";
+      import Child from "./Child";
+      class Parent extends Component {
+        childRef = createRef();
+        state = {
+          count: 0
+        };
+      
+        addCount = () => {
+          const { count } = this.state;
+          this.setState({
+            count: count + 1
+          });
+        };
+      
+        addChild = () => {
+          this.childRef.current.addChild();  // 取得child DOM物件後呼叫child的function
+        };
+      
+        render() {
+          return (
+            <div>
+              <div>{this.state.count}</div>
+              <button onClick={this.addCount}>+Parent</button>
+              <button onClick={this.addChild}>+Child</button>
+              <Child ref={this.childRef} addParent={this.addCount} />
+            </div>
+          );
+        }
+      }
+      
+      export default Parent;
+      
+      // 2. 剝奪子的state, 完全用父操控
+      // Parent.js
+      import React, { Component, createRef } from "react";
+      import Child from "./Child";
+      class Parent extends Component {
+        childRef = createRef();
+        state = {
+          count: 0,
+          childCount: 0
+        };
+      
+        addCount = () => {
+          const { count } = this.state;
+          this.setState({
+            count: count + 1
+          });
+        };
+      
+        addChild = () => {
+          const { childCount } = this.state;
+          this.setState({
+            childCount: childCount + 1
+          });
+        };
+      
+        render() {
+          return (
+            <div>
+              <div>{this.state.count}</div>
+              <button onClick={this.addCount}>+Parent</button>
+              <button onClick={this.addChild}>+Child</button>
+              <Child
+                childCount={this.state.childCount}
+                addChild={this.addChild}
+                addParent={this.addCount}
+              />
+            </div>
+          );
+        }
+      }
+      
+      export default Parent;
+      
+      
+      // child.js
+      import React, { Component } from "react";
+      
+      class Child extends Component {
+        render() {
+          const { addChild, addParent, childCount } = this.props;
+          return (
+            <div>
+              <div>{childCount}</div>
+              <button onClick={addParent}>+Parent</button>
+              <button onClick={addChild}>+Child</button>
+            </div>
+          );
+        }
+      }
+      
+      export default Child;
+      
+      
+    '''
+  }
+]
+isStarred: false
+isTrashed: false

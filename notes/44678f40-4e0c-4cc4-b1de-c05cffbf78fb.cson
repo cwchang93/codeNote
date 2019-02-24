@@ -1,0 +1,15 @@
+createdAt: "2019-02-05T15:14:42.523Z"
+updatedAt: "2019-02-05T15:18:17.423Z"
+type: "MARKDOWN_NOTE"
+folder: "06e3fc0be077b72fea8f"
+title: "L4 big O"
+tags: [
+  "bigONotation"
+  "Udemy"
+]
+content: '''
+  ### L4 big O
+  purpose: determine which one is the best
+'''
+isStarred: false
+isTrashed: false

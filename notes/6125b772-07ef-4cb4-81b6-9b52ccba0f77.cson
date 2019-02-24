@@ -1,0 +1,105 @@
+createdAt: "2019-02-04T07:47:08.677Z"
+updatedAt: "2019-02-04T09:32:47.051Z"
+type: "SNIPPET_NOTE"
+folder: "4edb77157485c1f3d23c"
+title: "use props and children to get data from Parent"
+tags: [
+  "props"
+  "children"
+  "getDataFromParent"
+]
+description: "use props and children to get data from Parent"
+snippets: [
+  {
+    name: "propsChildren.js"
+    mode: "JavaScript"
+    content: '''
+      // A. 使用props傳值
+      // 1.Use props
+      // List.js
+      import React, { Component } from "react";
+      import Item from "./Item";
+      
+      class List extends Component {
+        render() {
+          return (
+            <ol>
+              <Item text="hi" />
+              <Item text="there" />
+              <Item text="how" />
+              <Item text="are U?" />
+            </ol>
+          );
+        }
+      }
+      
+      export default List;
+      
+      // Item.js
+      import React, { Component } from "react";
+      class Item extends Component {
+        render() {
+          // return <li>Hello There!</li>;
+          return <li>{this.props.text}</li>;
+        }
+      }
+      
+      export default Item;
+      
+      // 2. Use children (get value from html text)
+      // this.props.children
+      // List.js
+      import React, { Component } from "react";
+      import Item from "./Item";
+      
+      class List extends Component {
+        render() {
+          return (
+            <ol>
+              <Item>Hi</Item>
+              <Item>there</Item>
+              <Item>howR</Item>
+              <Item>U?</Item>
+            </ol>
+          );
+        }
+      }
+      
+      export default List;
+      
+      // Item.js
+      import React, { Component } from "react";
+      class Item extends Component {
+        render() {
+          // return <li>Hello There!</li>;
+          return <li>{this.props.children}</li>;
+        }
+      }
+      
+      export default Item;
+      
+      // B. 制定初始值 defaultProps
+      1. 在constructor前面直接制定 static defaultProps () {
+        initCount: 15,
+      }
+      
+      2. 寫在最後面： export default class Counter 後面;
+        Counter.defaultProps = {
+        initCount: 15
+      };
+      
+      // C.制定型別 propTypes 
+        1.  在constructor前面直接制定 static propTypes () {
+                initCount: PropType.number
+            }
+        2. 寫在最後面： export default class Counter 後面;
+        Counter.PropsType = {
+                initCount: PropType.number
+            }
+      
+        
+    '''
+  }
+]
+isStarred: false
+isTrashed: false
